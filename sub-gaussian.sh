@@ -76,13 +76,16 @@ echo >> SLURM_$file
 echo "INPUT_DIR=\"$PWD\"" >> SLURM_$file
 echo "INPUT_FILE=\"${file}\"" >> SLURM_$file
 echo "OUTPUT_FILE=\"${file/.inp/.log}\"" >> SLURM_$file
+echo "CHK_FILE=\"${file/.inp/.chk}\"" >> SLURM_$file
 echo >> SLURM_$file
-echo "cp -r \${INPUT_DIR}/* \${TMPDIR}" >> SLURM_$file
+echo "cp \${INPUT_DIR}/* \${TMPDIR}" >> SLURM_$file
 echo >> SLURM_$file
 echo "cd \$TMPDIR" >> SLURM_$file
 echo >> SLURM_$file
 echo "g09 < \${INPUT_FILE} > \${OUTPUT_FILE}" >> SLURM_$file
 echo >> SLURM_$file
+#echo "formchk < \${CHK_FILE}" >> SLURM_$file
+#echo >> SLURM_$file
 echo "cp -r \$TMPDIR/* \$SLURM_SUBMIT_DIR" >> SLURM_$file
 echo "rm -rf \$TMPDIR" >> SLURM_$file
 echo "rm -f \${INPUT_DIR}/SLURM_$file" >> SLURM_$file
