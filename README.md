@@ -1,5 +1,5 @@
-# GaussianPCSS Support Scripts
-This package include some  bash scripts that were created to ease working with SLURM Workload Manager that is installed at PCSS.
+# SLURM4Gaussian Support Scripts
+This package includes bash scripts useful for working around with Gaussian with SLURM batch system HPCs.
 
 ## Package contents
 
